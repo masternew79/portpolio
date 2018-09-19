@@ -1,0 +1,17 @@
+{
+  "name": "home",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gsap": "^2.0.2",
+    "jquery": "^3.3.1",
+    "node-sass": "^4.9.3",
+    "scrollmagic": "^2.0.5"
+  }
+}

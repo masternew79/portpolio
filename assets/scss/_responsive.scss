@@ -1,0 +1,121 @@
+// Mobile
+@media (max-width: 575.98px) {
+    .is-mobile {
+        display: none;
+    }
+    .logo {
+        svg {
+            width: 70px;
+            height: 40px;
+        }
+    }
+    .reloader {
+        svg {
+            width: 50vw;
+        }
+        h3 {
+            font-size: 13px;
+            margin-top: -80px;
+        }
+    }
+    .button-open-navigation {
+        right: -20px;
+        width: 50px;
+        height: 50px;
+
+        i {
+            top: 48%;
+            font-size: 20px;
+            left: 20%;
+        }
+    }
+    .home {
+        .text {
+            div {
+                margin: 45px 0;
+                font-size: 28px;
+
+                .highlight {
+                    font-size: 29px;
+                }
+
+                &.used, &.knowledge {
+                    margin-top: 0px;
+                    padding: 10px;
+
+                    span {
+                        font-size: 12px;
+                        font-weight: normal;
+                        display: inline-block;
+                        margin-top: 1px;
+                        padding: 1px;
+                        min-width: 60px;
+                    }
+                }
+
+                &.typingUsedSkills, &.typingKnowledgeSkills, &.typingJob {
+                    width: 0;
+                    font-size: 16px;
+                    margin-bottom: 0px;
+                }
+
+                &.cta {
+                    margin: 50px auto;
+
+                    a {
+                        height: 40px;
+                        width: 160px;
+                        span {
+                            line-height: 40px;
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Tablet
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .reloader {
+        svg {
+            width: 50vw;
+        }
+        h3 {
+            font-size: 5vw;
+            margin-top: -35px;
+        }
+    }
+    .home {
+        .text {
+            div {
+                margin: 45px 0;
+                font-size: 34px;
+
+                .highlight {
+                    font-size: 35px;
+                }
+
+                &.typingUsedSkills, &.typingKnowledgeSkills {
+                    width: 0;
+                    font-size: 16px;
+                    margin-bottom: 0px;
+                }
+
+                &.used, &.knowledge {
+                    margin-top: 10px;
+                    padding: 20px;
+
+                    span {
+                        font-size: 16px;
+                        font-weight: normal;
+                        display: inline-block;
+                        margin-top: 5px;
+                        padding: 3px;
+                    }
+                }
+            }
+        }
+    }
+}
