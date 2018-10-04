@@ -3,12 +3,7 @@
     .is-mobile {
         display: none;
     }
-    .logo {
-        svg {
-            width: 70px;
-            height: 40px;
-        }
-    }
+
     .reloader {
         svg {
             width: 50vw;
@@ -18,104 +13,282 @@
             margin-top: -80px;
         }
     }
-    .button-open-navigation {
-        right: -20px;
-        width: 50px;
-        height: 50px;
 
-        i {
-            top: 48%;
-            font-size: 20px;
-            left: 20%;
+    .pagination {
+        position: fixed;
+        display: block;
+        z-index: 3;
+        left: 103%;
+        top: 50%;
+
+        .dot {
+            margin: 20px 0px;
+            cursor: pointer;
+            transition: 0.5s;
         }
     }
-    .home {
-        .text {
-            div {
-                margin: 45px 0;
-                font-size: 28px;
 
-                .highlight {
-                    font-size: 29px;
-                }
+    .navigation {
 
-                &.used, &.knowledge {
-                    margin-top: 0px;
-                    padding: 10px;
+        .wrapper {
+            .button {
+                top: 30%;
+                left: 10%;
+                width: 35px;
+                height: 35px;
+            }
 
-                    span {
-                        font-size: 12px;
-                        font-weight: normal;
-                        display: inline-block;
-                        margin-top: 1px;
-                        padding: 1px;
-                        min-width: 60px;
-                    }
-                }
+            .list-nav {
+                right: 50px;
+                top: 30%;
 
-                &.typingUsedSkills, &.typingKnowledgeSkills, &.typingJob {
-                    width: 0;
-                    font-size: 16px;
-                    margin-bottom: 0px;
-                }
-
-                &.cta {
-                    margin: 50px auto;
+                li {
+                    margin: 30px 0;
 
                     a {
-                        height: 40px;
-                        width: 160px;
-                        span {
-                            line-height: 40px;
-                            font-size: 16px;
+                        .name {
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+
+            .list-socials {
+                top: 60%;
+
+                div {
+                    margin: 15px 5px;
+                }
+
+                ul {
+                    li {
+                        padding: 10px;
+                        margin: 10px;
+
+                        a {
+                            font-size: 22px;
                         }
                     }
                 }
             }
         }
     }
-}
 
-// Tablet
-@media (min-width: 768px) and (max-width: 991.98px) {
-    .reloader {
-        svg {
-            width: 50vw;
+    .button-open-navigation {
+        top: 8%;
+        width: 40px;
+        height: 40px;
+
+        &:hover {
+            div.two {
+                width: 60px;
+            }
         }
-        h3 {
-            font-size: 5vw;
-            margin-top: -35px;
+
+        div {
+            height: 4px;
+            margin: 7px 0;
+            border-radius: 5px;
+            transition: 0.5s;
+            padding: 0;
+
+            &.one {
+                width: 40px;
+            }
+
+            &.two {
+                width: 20px;
+            }
+
+            &.three {
+                width: 30px;
+            }
         }
     }
+
     .home {
-        .text {
-            div {
-                margin: 45px 0;
-                font-size: 34px;
+        .masternew {
+            svg {
+                width: 300px;
+            }
+        }
 
-                .highlight {
-                    font-size: 35px;
+        .moon {
+            height: 30%;
+        }
+
+        .intro {
+            position: absolute;
+            top: 56%;
+            width: 70%;
+            transform: translate(-50%, -50%);
+            overflow: hidden;
+            font-size: 14px;
+
+            p {
+                height: 120px;
+            }
+
+            span.wrapper {
+                position: absolute;
+            }
+        }
+
+        .background {
+            position: absolute;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    }
+
+    .projects {
+        .project {
+            .pin-wrapper {
+                .image {
+                    top: 25%;
+                    height: 300px;
+                    width: 300px;
+                    left: -100%;
                 }
 
-                &.typingUsedSkills, &.typingKnowledgeSkills {
-                    width: 0;
-                    font-size: 16px;
-                    margin-bottom: 0px;
-                }
+                .content {
+                    right: -100%;
+                    top: 65%;
+                    width: 300px;
 
-                &.used, &.knowledge {
-                    margin-top: 10px;
-                    padding: 20px;
+                    h3 {
+                        font-size: 24px;
+                        margin: 0;
+                    }
 
-                    span {
-                        font-size: 16px;
-                        font-weight: normal;
-                        display: inline-block;
-                        margin-top: 5px;
-                        padding: 3px;
+                    .stack {
+                        span {
+                            padding: 2px;
+                        }
                     }
                 }
             }
         }
+    }
+
+    .skills {
+        .skill-box {
+            width: 80%;
+            transform: translateX(10%);
+            margin: 15px 0;
+
+            p {
+                margin: 0px;
+                padding: 0;
+
+                &:nth-child(2) {
+                    top: -20px;
+                }
+            }
+
+            .skill {
+                padding: 2px;
+
+                .skill-level {
+                    height: 10px;
+                }
+            }
+        }
+    }
+
+    .portfolio, .skills, .contact {
+        .header {
+            svg {
+                width: 90%;
+            }
+
+            p {
+                height: 40px;
+                overflow: hidden;
+                position: relative;
+
+                .wrapper {
+                    position: absolute;
+                    left: 0%;
+                    top: 40px;
+                }
+            }
+        }
+
+    }
+
+    .skills {
+        .header {
+            svg {
+                width: 65%;
+            }
+        }
+    }
+
+    .portfolio {
+        .header {
+            margin: 0;
+        }
+
+    }
+
+    .contact {
+        .header {
+            margin: 0;
+        }
+    }
+}
+
+// Tablet
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .portfolio,
+    .skills,
+    .contact {
+        padding: 50px 0 0 0;
+        .header {
+            text-align: center;
+            text-transform: uppercase;
+            margin: 20px 0;
+
+            h3 {
+                font-size: 40px;
+            }
+        }
+    }
+
+    .projects {
+        .project {
+            .pin-wrapper {
+                .image {
+                    left: 10%;
+                    top: 35%;
+                    height: 600px;
+                    width: 600px;
+                }
+
+                .content {
+                    top: 65%;
+                    width: 600px;
+                    right: 10%;
+
+                    h3 {
+                        font-size: 24px;
+                        margin: 0;
+                    }
+
+                    .stack {
+                        span {
+                            padding: 2px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .skills {
+        min-height: 50vh;
     }
 }

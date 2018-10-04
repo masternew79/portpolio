@@ -1,5 +1,5 @@
 @import 'variable';
-@import url('https://fonts.googleapis.com/css?family=Fredoka+One|Righteous|Roboto+Slab:700');
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One|Righteous|Notable');
 
 html,
 body {
@@ -7,215 +7,267 @@ body {
     margin: 0;
     padding: 0;
     position: relative;
-    background: #000;
-}
-
-@keyframes animateLogo {
-    0% {
-        right: 0%;
-    }
-    100% {
-        right: -400%;
-    }
+    font-family: 'Fredoka One', cursive;
+    scroll-behavior: smooth;
+    color: $primary;
+    overflow-x: hidden;
 }
 
 @keyframes animateScrollDown {
     0% {
-        transform: translate(-50%, 5px);
-        opacity: 0;
+        transform: translateY(0px);
+    }
+    25% {
+        transform: translateY(8px);
+    }
+    50% {
+        transform: translateY(4px);
+    }
+    75% {
+        transform: translateY(-4px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes animateWave {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(8deg);
+    }
+    50% {
+        transform: rotate(4deg);
+    }
+    75% {
+        transform: rotate(-4deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes animateFlow {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    20% {
+        transform: translate(-5px, 5px);
+    }
+    40% {
+        transform: translate(-5px, -5px);
+    }
+    60% {
+        transform: translate(5px, 5px);
     }
     80% {
-        transform: translate(-50%, 10px);
-        opacity: 1;
+        transform: translate(5px, -5px);
     }
     100% {
-        transform: translate(-50%, 20px);
-        opacity: 0;
+        transform: translate(0px, 0px);
     }
 }
 
-@keyframes animteCTA {
+@keyframes animateAstronaut {
     0% {
-        background-position: 0;
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-10deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(10deg);
     }
     100% {
-        background-position: 400%;
+        transform: rotate(0deg);
     }
 }
 
-.reloader {
-    position: fixed;
-    overflow: hidden;
-    height: 100vh;
-    width: 100%;
-    transition: 1s;
-    z-index: 4;
-    background-color: #000;
-    overflow: hidden;
-
-    .loader {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+@keyframes animateCTA {
+    0% {
+        content: 'SOMETHING';
     }
-
-    &:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 400%;
-        height: 100%;
-        background: linear-gradient(to right, transparent, #000, #000);
-        animation: animateLogo 2s linear forwards;
+    60% {
+        content: 'BELOW HERE';
     }
-
-    svg {
-        width: 30vw;
-    }
-
-    h3 {
-        width: 30vw;
-        color: #fff;
-        text-align: center;
-        width: 100%;
-        font-size: 34px;
-        font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
-        letter-spacing: 10px;
-        margin-top: -35px;
+    100% {
+        content: 'SCROLL DOWN!';
     }
 }
 
 .button-open-navigation {
     cursor: pointer;
-    background-color: $main;
+    color: $primary;
     position: fixed;
-    border-radius: 50%;
-    top: 50%;
+    top: 10%;
     transform: translate(0, -50%);
-    right: -30px;
-    width: 70px;
-    height: 70px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
     z-index: 3;
 
-    i {
+    &:hover {
+        div.two {
+            width: 60px;
+        }
+    }
+
+    div {
+        height: 4px;
+        background: $primary;
+        margin: 7px 0;
+        border-radius: 5px;
+        transition: 0.5s;
+        padding: 0;
+
+        &.one {
+            width: 50px;
+        }
+
+        &.two {
+            width: 30px;
+        }
+
+        &.three {
+            width: 40px;
+        }
+    }
+
+    span {
+        text-transform: uppercase;
+        font-size: 12px;
         position: absolute;
-        top: 48%;
-        font-size: 22px;
-        left: 23%;
-        transform: translate(0, -50%);
+        transform: rotate(-90deg);
+        top: 10px;
+        left: -30px;
     }
 }
 
 .navigation {
     position: fixed;
-    width: 500px;
-    border-radius: 50%;
+    width: 0px;
     height: 100vh;
-    right: -500px;
-    background: $main;
+    right: -3px;
+    background: $color5;
     z-index: 3;
+    border-left: 3px solid $primary;
+    overflow: hidden;
 
-    .button {
-        position: absolute;
-        top: 30%;
-        left: 20%;
-        transform: translate(0, -50%);
-        overflow: hidden;
-        width: 30px;
-        height: 30px;
-        cursor: pointer;
-        transition: 0.5s;
+    .wrapper {
+        position: relative;
+        height: 100%;
 
-        i {
-            width: 100%;
-            height: 100%;
+        .button {
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            // transform: translate(0, -50%);
+            width: 35px;
+            height: 35px;
+            cursor: pointer;
             transition: 0.5s;
-            font-size: 24px;
+
+            div {
+                height: 4px;
+                background: $primary;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                border-radius: 5px;
+
+                &.one {
+                    transform: rotate(45deg);
+                }
+                &.two {
+                    transform: rotate(-45deg);
+                }
+            }
         }
-    }
 
-    ul {
-        position: absolute;
-        right: 250px;
-        top: 50%;
-        transform: translate(0, -50%);
+        .list-nav {
+            position: absolute;
+            right: 50px;
+            top: 40%;
+            transform: translate(0, -50%);
 
-        li {
-            list-style: none;
-            width: 50px;
-            margin: 15px 0;
+            li {
+                list-style: none;
+                margin: 30px 0;
 
-            a {
-                color: #fff;
-                text-decoration: none;
-                position: relative;
+                a {
+                    color: $primary;
+                    text-decoration: none;
+                    position: relative;
 
-                &:hover,
-                &.active {
-                    .icon {
-                        i {
-                            transform: translateY(-100%);
+                    &:hover,
+                    &.active {
+                        .name {
+                            &:before {
+                                width: 110%;
+                            }
                         }
                     }
+
                     .name {
-                        span {
-                            transform: translateY(100%);
-                        }
-                    }
-                }
-
-                .icon {
-                    // background-color: #000;
-                    color: #fff;
-                    font-size: 30px;
-                    height: 45px;
-                    width: 45px;
-                    line-height: 45px;
-                    align-content: center;
-                    transition: 0.5s;
-                    overflow: hidden;
-
-                    i {
-                        transition: 0.5s;
-                        width: 100%;
-                        height: 100%;
-                        line-height: 45px;
-
-                        &:last-child {
-                            color: #000;
-                        }
-                    }
-                }
-
-                .name {
-                    position: absolute;
-                    font-size: 15px;
-                    top: -27px;
-                    right: 20px;
-                    overflow: hidden;
-                    text-transform: uppercase;
-                    font-weight: 700;
-                    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
-
-                    span {
+                        font-size: 20px;
+                        text-transform: uppercase;
+                        font-weight: 700;
                         display: block;
-                        position: relative;
-                        color: #fff;
-                        width: 100%;
+                        color: $primary;
                         transition: 0.5s;
+                        position: relative;
 
                         &:before {
-                            content: attr(data-text);
-                            color: #000;
+                            content: '';
                             position: absolute;
-                            top: -100%;
-                            width: 100%;
-                            height: 100%;
+                            height: 60%;
+                            width: 0%;
+                            left: -5%;
+                            top: 30%;
+                            background: $primary;
+                            z-index: -1;
+                            transition: 0.5s;
                         }
                     }
                 }
+            }
+        }
+
+        .list-socials {
+            position: absolute;
+            top: 70%;
+            left: 10px;
+            z-index: 3;
+            padding: 10px;
+
+            div {
+                margin: 15px 5px;
+            }
+
+            ul {
+                li {
+                    display: inline;
+                    list-style-type: none;
+                    padding: 10px;
+                    margin: 10px;
+
+                    a {
+                        color: $primary;
+                        font-size: 25px;
+                        text-decoration: none;
+                    }
+                }
+            }
+
+            .contact {
+                text-transform: uppercase;
+                font-size: 18px;
             }
         }
     }
@@ -223,220 +275,460 @@ body {
 
 .home {
     height: 100vh;
-    color: #fff;
+    color: $color3;
     overflow: hidden;
-    position: relative;
+    // position: relative;
+    z-index: 2;
+    box-sizing: border-box;
+    background: $gradient1;
 
-    .text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        overflow: hidden;
-        width: 100%;
+}
 
-        div {
-            text-transform: uppercase;
-            text-align: center;
-            font-size: 50px;
-            font-family: 'Fredoka One', cursive;
+#masternew {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    font-family: 'Notable', sans-serif;
+    font-size: 100px;
+    color: $primary;
 
-            .highlight {
-                color: $main;
-                font-size: 52px;
-            }
-
-            &.typing {
-                position: relative;
-                top: 50%;
-                margin: 0 auto;
-                text-align: center;
-                white-space: nowrap;
-                overflow: hidden;
-                box-sizing: content-box;
-            }
-
-            &.used,
-            &.knowledge {
-                font-family: 'Roboto Slab', serif;
-                font-weight: 700;
-                font-size: 14px;
-
-                span {
-                    position: relative;
-                    background-color: #fff;
-                    color: #000;
-                    padding: 2px;
-                    display: inline-block;
-                    min-width: 90px;
-                }
-            }
-
-            &.typingName {
-                width: 0;
-                margin-bottom: 50px;
-            }
-
-            &.typingUsedSkills,
-            &.typingKnowledgeSkills,
-            &.typingJob {
-                width: 0;
-                font-size: 16px;
-                margin: 15px auto;
-            }
-
-            &.cta {
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                margin: 100px auto 30px auto;
-
-                a {
-                    position: relative;
-                    width: 200px;
-                    height: 60px;
-                    font-size: 22px;
-                    line-height: 60px;
-                    color: #fff;
-                    text-align: center;
-                    text-transform: uppercase;
-                    text-decoration: none;
-                    font-family: 'Righteous', serif;
-                    box-sizing: border-box;
-                    background-size: 400%;
-                    animation: animteCTA 8s linear infinite;
-                    border-radius: 30px;
-                    z-index: 1;
-                    transform-style: preserve-3d;
-                    perspective: 1000px;
-                    transform-origin: center center;
-
-                    span {
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        width: 100%;
-                        height: 100%;
-                        display: block;
-                        text-align: center;
-                        line-height: 60px;
-                        font-size: 24px;
-                        transform-style: preserve-3d;
-                        backface-visibility: hidden;
-                        transition: 1s;
-                        border-radius: 30px;
-
-                        &.front {
-                            transform: rotateX(0deg) translateZ(20px);
-                        }
-                        &.front {
-                            transform: rotateX(0deg) translateZ(20px);
-                        }
-                        &.back {
-                            transform: rotateX(180deg) translateZ(20px);
-                        }
-                        &.center {
-                            background: linear-gradient(
-                                90deg,
-                                $main,
-                                rgba(232, 20, 20, 1),
-                                $red-2,
-                                $main
-                            );
-                            background-size: 400%;
-                            animation: animteCTA 8s linear infinite;
-
-                            &:before {
-                                content: '';
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                width: 100%;
-                                height: 100%;
-                                background: linear-gradient(
-                                    90deg,
-                                    $main,
-                                    rgba(232, 20, 20, 1),
-                                    $red-2,
-                                    $main
-                                );
-                                border-radius: 30px;
-                                transform: translateZ(-1px);
-                            }
-                        }
-                    }
-
-                    &:hover, &:active, &:focus {
-                        span {
-                            &.front {
-                                transform: rotateX(-180deg) translateZ(20px);
-                            }
-                            &.back {
-                                transform: rotateX(0deg) translateZ(20px);
-                            }
-                            &.center {
-                                transform: rotateX(-180deg);
-                            }
-                        }
-                    }
-                }
-            }
-        }
+    svg {
+        fill: transparent;
+        stroke: #fff;
+        stroke-width: 2px;
+        stroke-dasharray: 600;
+        opacity: 0;
+        width: 460px;
     }
+}
 
-    .scroll-down {
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translate(0, -50%);
-        z-index: 3;
+#spaceship {
+    position: fixed;
+    top: 100%;
+    left: 50%;
+    height: 0;
+    z-index: 2;
+    transform: translate(-50%, -50%);
 
-        .mouse {
-            position: relative;
-            width: 20px;
-            height: 30px;
-            border-radius: 25px;
-            background: transparent;
-            border: 2px solid $main;
+    svg {
+        width: 150px;
+    }
+}
 
-            &:before {
-                content: '';
+#earth {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background: url('../images/earth.svg') no-repeat top center;
+    background-size: cover;
+}
+
+#moon {
+    position: fixed;
+    top: 150%;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    // background: url('../images/moon.svg') no-repeat top center;
+    // background-size: cover;
+    z-index: 2;
+
+    .wrapper {
+        height: 120vh;
+        width: 100vw;
+        position: relative;
+
+        #moon {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            top: 0;
+            background: url('../images/moon.svg') no-repeat top center;
+            background-size: cover;
+            z-index: 2;
+        }
+
+        #building1 {
+            position: absolute;
+            top: -16%;
+            left: 15%;
+            height: 200px;
+            width: 200px;
+            background: url('../images/building1.svg') no-repeat top center;
+            background-size: cover;
+            transform: rotate(-9deg);
+            z-index: 1;
+        }
+
+        #building2 {
+            position: absolute;
+            height: 300px;
+            width: 170px;
+            top: -25%;
+            left: 76%;
+            background: url(building2.76b0b948.svg) no-repeat top center;
+            background-size: contain;
+            z-index: 1;
+            transform: rotate(8deg);
+        }
+
+
+        #astronaut {
+            position: absolute;
+            cursor: pointer;
+            top: -20%;
+            left: 50%;
+            height: 200px;
+            width: 300px;
+            z-index: 5;
+            // user-select: none;
+            transform: translate(-50%, 0%);
+            background: url('../images/astro.svg') no-repeat top center;
+            background-size: cover;
+
+            span {
+                font-size: 20px;
+                color: $color4;
+                display: block;
+                width: 100px;
+                text-align: center;
                 position: absolute;
-                width: 4px;
-                height: 2px;
-                border-radius: 50%;
-                background-color: $main;
-                left: 50%;
-                top: 5px;
-                transform: translate(-50%, 0);
-                animation: animateScrollDown 1s linear infinite;
-            }
+                top: 22%;
+                left: 10%;
+                transform: rotate(-4deg);
 
-            &:after {
-                content: '';
-                position: absolute;
-                width: 2px;
-                height: 5px;
-                background-color: $main;
-                left: 50%;
-                top: 5px;
-                transform: translate(-50%, 0);
+                &:before {
+                    content: 'WELCOME!';
+                    animation: animateCTA infinite 6s;
+                }
             }
         }
     }
 }
 
-.portpolio {
-    min-height: 100vh;
+#stars {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('../images/stars.svg') no-repeat top center;
+    background-size: cover;
+    z-index: 1;
+}
+
+#mars {
+    position: fixed;
+    height: 50%;
+    bottom: -50%;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+    background: url('../images/background1.svg') no-repeat top center;
+    background-size: cover;
+}
+
+#planet1 {
+    position: fixed;
+    height: 40%;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+    background: url('../images/background2.svg') no-repeat top center;
+    background-size: cover;
+}
+
+#planet2 {
+    position: fixed;
+    height: 40%;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+    background: url('../images/background3.svg') no-repeat top center;
+    background-size: cover;
+}
+
+.intro {
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    width: 50%;
+    transform: translate(-50%, -50%);
+    color: $primary;
+    overflow: hidden;
+
+    p {
+        position: relative;
+        text-align: start;
+        display: block;
+        height: 60px;
+        overflow: hidden;
+        transition: 1s;
+
+        &:first-child {
+            font-size: 22px;
+            color: $primary;
+        }
+    }
+
+    span.highlight {
+        color: $color5;
+    }
+
+    span.wrapper {
+        position: absolute;
+        // top: 60px;
+        // transition: 1s;
+    }
+}
+
+.portfolio,
+.skills,
+.contact {
+    z-index: 2;
+    padding: 50px 0;
+    overflow: hidden;
+
+    .header {
+        position: relative;
+        // overflow: hidden;
+        text-align: center;
+        text-transform: uppercase;
+
+        svg {
+            fill: transparent;
+        }
+
+        p {
+            height: 20px;
+            overflow: hidden;
+            color: $primary;
+            position: relative;
+
+            .highlight {
+                color: $color5;
+            }
+
+            .wrapper {
+                position: absolute;
+                left: 15%;
+                top: 20px;
+            }
+        }
+    }
+}
+
+.portfolio {
+    background: $color6;
+    position: relative;
+
+    .header {
+        z-index: 2;
+        margin-right: 50%;
+    }
+}
+
+.contact {
+    height: 100vh;
+
+    .header {
+        margin-left: 30%;
+    }
+}
+
+.pagination {
+    position: fixed;
+    display: inline-flex;
+    left: 50%;
+    bottom: 5%;
+    transform: translate(-50%, 0);
+    z-index: 5;
+    opacity: 0;
+
+    .dot {
+        width: 60px;
+        height: 60px;
+        margin: 0 30px;
+        cursor: pointer;
+        transition: 0.5s;
+        background: url('../images/rock.svg') no-repeat;
+        background-size: cover;
+
+        &.active {
+            animation: animateWave infinite 0.5s;
+        }
+    }
+}
+
+.projects {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    min-width: 300vw;
+    background: $color9;
+
+    .background {
+        
+        background: transparent;
+        z-index: 0;
+        position: absolute;
+        width: 100vw !important;
+        height: 100vh;
+        overflow: hidden;
+
+        .path {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            background: url('../images/path.svg') no-repeat;
+            background: cover;
+            height: 100px;
+        }
+
+        .hole {
+            position: absolute;
+            width: 300px;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        #hole1 {
+            top: 10%;
+            left: 10%;
+        }
+        #hole2 {
+            top: 15%;
+            left: 65%;
+        }
+        #hole3 {
+            top: 40%;
+            left: 40%;
+            transform: rotate(9deg);
+            img {
+                width: 150px;
+            }
+        }
+        #hole4 {
+            top: 40%;
+            left: 95%;
+        }
+        #hole5 {
+            top: 80%;
+            left: 0%;
+            img {
+                width: 100px;
+            }
+        }
+        #hole6 {
+            top: 80%;
+            left: 90%;
+            transform: scaleY(1.4);
+        }
+    }
 
     .project {
         height: 100vh;
+        width: 100vw;
+
+        .pin-wrapper {
+            height: 100%;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+
+            .image {
+                top: 50%;
+                left: -50%;
+                transform: translate(0%, -50%);
+                position: absolute;
+                height: 550px;
+                width: 550px;
+                z-index: 3;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .content {
+                position: absolute;
+                top: 40%;
+                right: -50%;
+                transform: translate(0%, -50%);
+                text-align: center;
+                width: 500px;
+
+                h3 {
+                    font-size: 24px;
+                }
+
+                .stack {
+                    span {
+                        background-color: $color5;
+                        padding: 2px;
+                        color: $primary;
+                    }
+                }
+
+                .link,
+                .repo {
+                    a {
+                        color: $color5;
+                    }
+                }
+            }
+        }
     }
+}
 
-    #project1 {
-        background: #C9D6FF;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+.skills {
+    box-sizing: border-box;
+    min-height: 100vh;
+    background: $color8;
 
+    .skill-box {
+        box-sizing: border-box;
+        width: 50%;
+        transform: translateX(50%);
+        margin: 20px 0;
+
+        p {
+            color: $primary;
+            text-transform: uppercase;
+            margin: 0 0 10px;
+            padding: 0;
+            letter-spacing: 1px;
+
+            &:nth-child(2) {
+                float: right;
+                top: -25px;
+                position: relative;
+            }
+        }
+
+        .skill {
+            background: $primary;
+            padding: 4px;
+            border: 1px solid $primary;
+            border-radius: 2px;
+
+            .skill-level {
+                background: $color7;
+                width: 100%;
+                height: 10px;
+            }
+        }
     }
 }
